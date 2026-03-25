@@ -1,0 +1,53 @@
+const checkRestaurantLimit = async (req, res, next) => {
+try {
+const restaurantCount = await Restaurant.count({
+where: { userId: req.user.id }
+})
+if (restaurantCount >= 3) {
+return res.status(403).json({
+message: 'You cannot have more than 3 restaurants'
+})
+}
+next()
+} catch (err) {
+res.status(500).json({ error: err.message })
+}
+}
+export { checkRestaurantLimit, ...otros }
+const getOrdersLastTwoHours = async function (req, res) {
+try {
+const restaurantId = req.params.restaurantId
+const twoHoursAgo = new Date()
+twoHoursAgo.setHours(twoHoursAgo.getHours() - 2)
+const ordersCount = await Order.count({
+where: {
+restaurantId: restaurantId,
+createdAt: {
+[Op.gte]: twoHoursAgo
+}
+}
+})
+res.json({ count: ordersCount })
+} catch (err) {
+res.status(500).send(err)
+}
+}
+const isSaturated = async function (req, res) {
+try {
+const restaurantId = req.params.restaurantId
+const twoHoursAgo = new Date()
+twoHoursAgo.setHours(twoHoursAgo.getHours() - 2)
+const ordersCount = await Order.count({
+where: {
+restaurantId: restaurantId,
+createdAt: {
+[Op.gte]: twoHoursAgo
+}
+}
+})
+const saturated = ordersCount > 1
+res.json({ saturated: saturated })
+} catch (err) {
+res.status(500).send(err)
+}
+}
