@@ -1,0 +1,41 @@
+Total Tests: 34, Passed Tests: 34, Failed Tests: 0, Average Duration: 17.38ms
+
+Files Summary:
+reviews.test.js: Total: 34, Passed: 34, Failed: 0, Average Duration: 17.38ms
+
+Test Results:
+File,Test,Duration,Status
+reviews.test.js,Review E2E tests Get restaurant reviews Should return 404 when restaurant does not exist,7,passed
+reviews.test.js,Review E2E tests Get restaurant reviews Should return 200 with empty array when restaurant has no reviews,10,passed
+reviews.test.js,Review E2E tests Get restaurant reviews Should return 200 with reviews when restaurant has reviews,9,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 401 if customer is not logged in,8,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 403 if logged as owner,9,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 404 if invalid restaurantId,47,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 409 if customer has no orders,35,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 422 with invalid stars,14,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 422 with negative stars,13,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 422 without stars,12,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should create review when data is valid,16,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should create review when data only contains stars,15,passed
+reviews.test.js,Review E2E tests POST /restaurants/:restaurantId/reviews should return 409 if customer has already reviewed the restaurant,10,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 401 if not logged in,5,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 403 if logged as owner,9,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 403 if logged as another customer,33,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 404 if invalid restaurantId,8,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 404 if invalid reviewId,25,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should return 409 if review does not belong to restaurant,28,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should not update review with negative stars,13,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should not update review with invalid stars,15,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should not update review without stars,12,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should update review when data is valid,17,passed
+reviews.test.js,Review E2E tests PUT /restaurants/:restaurantId/reviews/:reviewId should update review when stars is 0,19,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 401 if not logged in,5,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 403 if deleting review as owner,10,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 403 if deleting another customer review,33,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 404 if invalid restaurantId,8,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 404 if invalid reviewId,10,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 409 if review does not belong to restaurant,31,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should delete own review successfully,16,passed
+reviews.test.js,Review E2E tests DELETE /restaurants/:restaurantId/reviews/:reviewId should return 404 if review was already deleted,11,passed
+reviews.test.js,Review E2E tests Restaurant avgStars computation should return avgStars correctly calculated,30,passed
+reviews.test.js,Review E2E tests Restaurant avgStars computation should return undefined avgStars if no reviews,48,passed
